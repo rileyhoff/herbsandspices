@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>H & S</title>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="author" content="Riley Hoff">
+    <meta name="description" content="Herbs and Spices design case study">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="style.css" rel="stylesheet" type="text/css" media="screen" />
+    <link href="https://fonts.googleapis.com/css?family=EB+Garamond|Quicksand:300&display=swap" rel="stylesheet">  
+    <script src="script.js"></script>
+    <!--[if lt IE 9]>
+<script src="//html5shim.googlecode.com/sin/trunk/html5.js"></script>
+<![endif]-->
+</head>
+
+<body id="index" class="">
+    <div id="title">
+    <a href="#" onmouseover="herbHoverOver()" onmouseout="herbHoverOut()" onclick="herbOpen()"><h1 id="herbs" >herbs</h1></a>
+    <a href="#" onclick="infoExit()"><h1 id="and">&</h1></a>
+    <a href="#" onmouseover="spiceHoverOver()" onmouseout="spiceHoverOut()" onclick="spiceOpen()"><h1 id="spices" >spices</h1></a>
+    </div>
+
+    <div id="herbBg" ></div>
+    <div id="spiceBg"  ></div>
+    
+    <div id="upArrow" class="upArrow">
+        <div class="head"></div>
+        <div class="line"></div>
+    </div>
+    <div id="downArrow" class="downArrow">
+            <div class="line"></div>
+            <div class="head"></div>
+        </div>
+
+
+    <article id="herbs">
+        <div class="item"><p>Sage</p></div>
+        <div class="item"><p>Tyme</p></div>
+        <div class="item"><p>Mint</p></div>
+        <div class="item"><p>Basil</p></div>
+    </article>
+    <article id="spice">
+        <div class="item"><p>Tumeric</p></div>
+        <div class="item"><p>Cumin</p></div>
+        <div class="item"><p>Paprika</p></div>
+        <div class="item"><p>Nutmeg</p></div>
+    </article>
+</body>
+</html>
