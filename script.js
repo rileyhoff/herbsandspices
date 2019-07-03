@@ -1,14 +1,3 @@
-/*
-function scrollFunction() {
-    if (document.body.scrollTop > 80 || document.documentElement.scrollTop > 80) {
-      document.getElementById("title").className = "back";
-      document.getElementById("roomImg").className = "front";
-    } else {
-      document.getElementById("title").className = "front";
-      document.getElementById("roomImg").className = "back";
-    }
-  } 
-  */
 function spiceHoverOver() {
    document.getElementById("downArrow").classList.add("hover");
 }
