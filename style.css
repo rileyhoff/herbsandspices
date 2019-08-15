@@ -18,12 +18,12 @@ article#spice{
     margin: 0 34vw;
 }
 
-/*title*/
+/* title screen */
 h1{
     font-family: 'Quicksand', sans-serif;
     font-weight: 300;
     letter-spacing: 2vw;
-    font-size: 2vw;
+    font-size: 16pt;
     display: inline-block;
     margin: 0;
     color: #24222E;
@@ -31,7 +31,7 @@ h1{
 div#title{
     position: fixed;
     width: 100%;
-    top: 50%;
+    top: 47%;
     left: 0;
     height: 400px;
     margin-top: -200px;
@@ -52,18 +52,16 @@ h1#and{
     position: fixed;
     text-align: center;
     left: 50%;
-    width: 300px;
-    margin-left: -120px;
+    width: 100px;
+    margin-left: -50px;
     font-size: 15vw;
-    line-height: 360px;
+    line-height: 390px;
     z-index:500;
     transition: all .5s ;
 }
 a{
     color: #24222E;
 }
-
-/*backgrounds*/
 div#herbBg{
     height: 100vh;
     width: 50vw;
@@ -86,57 +84,7 @@ div#spiceBg{
     transition: all 1s ease-in-out;
     animation: 1s ease-in-out 0s 1 slideDown;
 }
-/* both info pages */
-.item {
-    width: 30vw;
-    height: 10vh;
-    margin: 0;
-}
-body.herbs .item{
-    width: 20vw;
-}
-.item img{
-    max-height: 20vh;
-    max-width: 30vw;
-    padding: 10vh 0;
-    float: right; 
-}
-article p{
-    font-size: 7vw;
-    color: #7c5a42;
-    margin: 0;
-    padding: 0;
-    line-height: 10vh;
-    width: 100%;
-}
-body.spice article p{
-    color: #b15f4e;
-}
-div.item:nth-child(odd) {
-    text-align: right;
-}
-.item p:hover{
-    color: #59393a;
-    transition: all .1s 0s;
-    cursor: pointer;
-}
-body.herbs .item p:hover{
-    color: #59443a;
-}
-/* spices */
-h1#spices.sMain{
-    display: block;
-    position: fixed;
-    top: 0;
-    left: 0;
-    height: auto;
-    width: auto;
-    line-height: normal;
-}
-h1.sMain{
-    display: none;
-}
-
+/*ccs arrows for title page */
 div.upArrow{
     position: fixed;
     bottom: -50vh;
@@ -146,11 +94,11 @@ div.upArrow{
     }
 div.upArrow.hover {
     transform: translateY(-80vh);
-    transition: all 1s;
+    transition: all 2s;
 }
 div.downArrow.hover {
     transform: translateY(80vh);
-    transition: all 1s;
+    transition: all 2s;
 }
 div.downArrow{
     position: fixed;
@@ -185,7 +133,39 @@ div.downArrow .line{
     transform: translate(10.5px,27px);
     transition: all 1s;
 }
-/* herbs */
+
+/* info pages */
+.item {
+    width: 60vw;
+    height: 10vh;
+    margin: 0 0 0 -10vw;
+}
+body.herbs .item{
+    width: 40vw;
+}
+article p{ 
+    font-size: 36pt;
+    color: #7c5a42; /* spice */
+    margin: 0;
+    padding: 0;
+    line-height: 36pt;
+    width: 100%;
+}
+body.spice article p{
+    color: #b15f4e;
+}
+div.item:nth-child(odd) {
+    text-align: right;
+}
+.item p:hover{
+    color: #59393a; /*spice*/
+    transition: all .1s 0s;
+    cursor: pointer;
+}
+/* herbs info page */
+body.herbs .item p:hover{
+    color: #59443a;
+}
 body.herbs .upArrow, body.info .downArrow {
     transform: translateY(-200vh);
 }
@@ -206,13 +186,8 @@ body.herbs h1#herbs{
 }
 body.herbs h1#and {
     transition: all 1.5s 1s cubic-bezier(0.075, 0.82, 0.165, 1);
-    left: 98vw;
+    left: 95vw;
     opacity: .2;
-}
-body.herbs h1#and:hover{
-    transition: .3s 0s;
-    opacity: 1;
-    left: 94vw;
 }
 body.herbs article#herbs{
     width: 30vw;
@@ -221,7 +196,7 @@ body.herbs article#herbs{
     transition: all 1s 2s;
 }
 
-/* spice */
+/* spice info page */
 body.spice {
     background-color: #D49156;
 }
@@ -242,13 +217,8 @@ body.spice h1#spices{
 }
 body.spice h1#and {
     transition: all 1.5s 1s cubic-bezier(0.075, 0.82, 0.165, 1);
-    left: 0;
+    left: 10vw;
     opacity: .2;
-}
-body.spice h1#and:hover{
-    transition: .3s 0s;
-    opacity: 1;
-    left: 2vw;
 }
 body.spice article#spice{
     width: 30vw;
@@ -256,9 +226,6 @@ body.spice article#spice{
     top: 30vh;
     transition: all 1s 2s;
 }
-
-
-
 
 /* animations */
 
@@ -281,4 +248,62 @@ body.spice article#spice{
 @keyframes fadeIn {
     from { opacity: 0; }
     to { opacity: 1; }
+}
+/* desktop only */
+@media only screen and (min-width: 786px){
+
+    /*title*/
+h1{
+    font-size: 2vw;
+    }
+div#title{
+    top: 50%;
+}
+h1#and{
+    width: 100px;
+    margin-left: -50px;
+    line-height: 360px;
+}
+/* both info pages */
+.item {
+    width: 30vw;
+    margin: 0;
+}
+body.herbs .item{
+    width: 20vw;
+}
+article p{
+    font-size: 7vw;
+    line-height: 10vh;
+}
+div.upArrow.hover {
+    transition: all 1s;
+}
+div.downArrow.hover {
+    transition: all 1s;
+
+/*herbs*/
+}body.herbs h1#and {
+    transition: all 1.5s 1s cubic-bezier(0.075, 0.82, 0.165, 1);
+    left: 98vw;
+    opacity: .2;
+}
+body.herbs h1#and:hover{
+    transition: .3s 0s;
+    opacity: 1;
+    left: 94vw;
+}
+
+/* spice */
+body.spice h1#and {
+    transition: all 1.5s 1s cubic-bezier(0.075, 0.82, 0.165, 1);
+    left: 0;
+    opacity: .2;
+}
+body.spice h1#and:hover{
+    transition: .3s 0s;
+    opacity: 1;
+    left: 2vw;
+}
+
 }
