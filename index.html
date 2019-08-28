@@ -35,17 +35,23 @@
             <div class="head"></div>
         </div>
 
-    <article id="herbs">
-        <div class="item"><p>Sage</p></div>
-        <div class="item"><p>Tyme</p></div>
-        <div class="item"><p>Mint</p></div>
-        <div class="item"><p>Basil</p></div>
+    <article class="herbs">
+        <div class="item"><p onclick="showDesc(this)">Sage</p></div>
+        <div class="item"><p onclick="showDesc(this)">Mint</p></div>
+        <div class="item"><p onclick="showDesc(this)">Basil</p></div>
+        <div class="item"><p onclick="showDesc(this)">Chive</p></div>
     </article>
-    <article id="spice">
-        <div class="item"><p>Tumeric</p></div>
-        <div class="item"><p>Cumin</p></div>
-        <div class="item"><p>Paprika</p></div>
-        <div class="item"><p>Nutmeg</p></div>
+    <article class="spice">
+        <div class="item"><p onclick="showDesc(this)">Turmeric</p></div>
+        <div class="item"><p onclick="showDesc(this)">Cumin</p></div>
+        <div class="item"><p onclick="showDesc(this)">Paprika</p></div>
+        <div class="item"><p onclick="showDesc(this)">Nutmeg</p></div>
     </article>
-</body>
+    <div id="descFull">
+        <h2 id="descTitle"></h2>
+        <p id="desc"></p>
+    </div>
+    <div id="down" class="btn" onclick="getNextDesc()"></div>
+    <div id="up" class="btn" onclick="getPrevDesc()"></div>
+   </body>
 </html>

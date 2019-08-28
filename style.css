@@ -5,14 +5,14 @@ Created by: Riley Hoff
 body{
     background-color: #24222E;
     font-family: 'EB Garamond', serif;
-    overflow-y: hidden;
+    overflow: hidden;
 }
-article#herbs{
+article.herbs{
     position: relative;
     top: 500vh;
     margin: 0 39vw;
 }
-article#spice{
+article.spice{
     position: relative;
     top: -500vh;
     margin: 0 34vw;
@@ -172,7 +172,7 @@ body.herbs .upArrow, body.info .downArrow {
 body.herbs {
     background-color: #D46E56;
 }
-body.herbs article#spice{
+body.herbs article.spice{
     display: none;
 }
 body.herbs div#spiceBg, body.herbs h1#spices{
@@ -189,7 +189,7 @@ body.herbs h1#and {
     left: 95vw;
     opacity: .2;
 }
-body.herbs article#herbs{
+body.herbs article.herbs{
     width: 30vw;
     display: block;
     top: 30vh;
@@ -200,7 +200,7 @@ body.herbs article#herbs{
 body.spice {
     background-color: #D49156;
 }
-body.spice article#herbs{
+body.spice article.herbs{
     display: none;
 }
 body.spice div#herbBg, body.spice h1#herbs{
@@ -220,11 +220,145 @@ body.spice h1#and {
     left: 10vw;
     opacity: .2;
 }
-body.spice article#spice{
+body.spice article.spice{
     width: 30vw;
     display: block;
     top: 30vh;
     transition: all 1s 2s;
+}
+
+/*  Description pages */
+#desc{
+    display: none;
+    position: fixed;
+    padding: 0;
+    margin: 0;
+    top: 35vh;
+    left: 20vw;
+    width: 60vw;
+    font-size: 14pt;
+}
+#descTitle{
+    display: none;
+    position: fixed;
+    margin: 0;
+    padding: 0;
+    left: 20vw;
+    width: 60vw;
+    text-align: center;
+    top: 25vh;
+    font-size: 24pt;
+    line-height: 4vw;
+}
+body.desc #desc{
+    display: block;
+    animation: fadeIn 1s 1.2s linear 1 backwards;
+}
+body.desc #descTitle{
+    display: block;
+    animation: fadeIn 1s 1s linear 1 backwards;
+}
+body.desc .upArrow{
+    display: none;
+}
+body.desc .downArrow{
+    display: none;
+}
+.btn{
+    position: fixed;
+    left: 50vw;
+    margin-left: -10px;
+    width: 20px;
+    height: 20px;
+    transform: rotate(45deg);
+    cursor: pointer;
+    display: none;
+    animation: fadeIn 1s 2s linear 1 backwards;
+}
+body.desc .btn{
+    display: block;
+}
+#up{
+    position: fixed;
+    top: 15vh;
+    border-top: 2px solid black;
+    border-left: 2px solid black;
+}
+#down{
+    top:85vh;
+    border-bottom: 2px solid black;
+    border-right: 2px solid black;
+}
+/* spice description */
+.spice.desc #spiceBg{
+    width: 100vw;
+}
+body.spice.desc h1#spices{
+    transform: translate(-50vw,-40vh);
+    transition: transform 1s ease-in-out;
+}
+.spice.desc .item{
+    transition: all 1s ease-in-out;
+    transition: height 1s 1s ease-in-out;
+    transform: translateX(-100vw);
+    text-align: right;
+    height: 5vh;
+}
+.item p::before{
+    content: "";
+    position: absolute;
+    display: block;
+    width: 7px;
+    border-radius: 50%;
+    font-size: 14pt;
+    top: 7vh;
+    left: 162vw;
+    height: 7px;
+    line-height: 5vh;
+    padding: 0;
+    text-align: center;
+    background-color: #d39f74;
+}
+.spice.desc p::before{
+    animation: fadeIn 1s 2s 1 backwards;
+}
+.item p:hover::before{
+    background-color: #7c5a42
+}
+.item p.active::before{
+    background-color: #59443a;
+}
+.spice.desc .btn{
+    border-color: #D49156 !important;
+}
+/* herb description */
+.herbs.desc #herbBg{
+    width: 100vw;
+}
+
+.herbs.desc .item{
+    transition: all 1s ease-in-out;
+    transition: height 1s 1s ease-in-out;
+    transform: translateX(-195vw);
+    text-align: right;
+    height: 5vh;
+}
+.herbs .item p::before{
+    left: 170vw;
+    line-height: 5vh;
+    background-color: #d38474;
+}
+.herbs.desc p::before{
+    animation: fadeIn 1s 2s 1 backwards;
+}
+.herbs .item p:hover::before{
+    background-color: #59393a;
+}
+.herbs .item p.active::before{
+    background-color: #59393a;
+}
+.herbs.desc .btn{
+    border-color: #b15f4e !important;
 }
 
 /* animations */
@@ -249,61 +383,89 @@ body.spice article#spice{
     from { opacity: 0; }
     to { opacity: 1; }
 }
+
 /* desktop only */
 @media only screen and (min-width: 786px){
 
-    /*title*/
-h1{
-    font-size: 2vw;
+        /*title*/
+    h1{
+        font-size: 2vw;
+        }
+    div#title{
+        top: 50%;
     }
-div#title{
-    top: 50%;
-}
-h1#and{
-    width: 100px;
-    margin-left: -50px;
-    line-height: 360px;
-}
-/* both info pages */
-.item {
-    width: 30vw;
-    margin: 0;
-}
-body.herbs .item{
-    width: 20vw;
-}
-article p{
-    font-size: 7vw;
-    line-height: 10vh;
-}
-div.upArrow.hover {
-    transition: all 1s;
-}
-div.downArrow.hover {
-    transition: all 1s;
+    h1#and{
+        width: 100px;
+        margin-left: -50px;
+        line-height: 360px;
+    }
+    /* both info pages */
+    .item {
+        width: 30vw;
+        margin: 0;
+    }
+    body.herbs .item{
+        width: 20vw;
+    }
+    article p{
+        font-size: 7vw;
+        line-height: 10vh;
+    }
+    div.upArrow.hover {
+        transition: all 1s;
+    }
+    div.downArrow.hover {
+        transition: all 1s;
 
-/*herbs*/
-}body.herbs h1#and {
-    transition: all 1.5s 1s cubic-bezier(0.075, 0.82, 0.165, 1);
-    left: 98vw;
-    opacity: .2;
-}
-body.herbs h1#and:hover{
-    transition: .3s 0s;
-    opacity: 1;
-    left: 94vw;
-}
+    /*herbs*/
+    }body.herbs h1#and {
+        transition: all 1.5s 1s cubic-bezier(0.075, 0.82, 0.165, 1);
+        left: 98vw;
+        opacity: .2;
+    }
+    body.herbs h1#and:hover{
+        transition: .3s 0s;
+        opacity: 1;
+        left: 94vw;
+    }
 
-/* spice */
-body.spice h1#and {
-    transition: all 1.5s 1s cubic-bezier(0.075, 0.82, 0.165, 1);
-    left: 0;
-    opacity: .2;
-}
-body.spice h1#and:hover{
-    transition: .3s 0s;
-    opacity: 1;
-    left: 2vw;
-}
+    /* spice */
+    body.spice h1#and {
+        transition: all 1.5s 1s cubic-bezier(0.075, 0.82, 0.165, 1);
+        left: 0;
+        opacity: .2;
+    }
+    body.spice h1#and:hover{
+        transition: .3s 0s;
+        opacity: 1;
+        left: 2vw;
+    }
+    /* description pages */
+    #desc{
+        top: 47vh;
+        font-size: 2vw;
+    }
+    #descTitle{
+        top: 35vh;
+        font-size: 4vw;
+    }
 
+    #up{
+        top: 20vh;
+    }
+    #down{
+        top:80vh;
+    }
+    .item p::before{
+        width: 10px;
+        top: 10vh;
+        left: 160vw;
+        height: 10px;
+
+    }
+    .herbs .item p::before{
+        left: 160vw;
+        line-height: 5vh;
+        background-color: #d38474;
+    }
 }
